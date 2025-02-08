@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Netflix Clone</title>
+    <meta name="description" content="This is a Netflix Clone Made By Only Using Html And Css its not Responsive for all devices">
+    <meta name="keywords" content="Netflixclone css html project">
+    <meta name="author" content="KASHIF IRFAN BHAT">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="icon.jpg">
+    <meta http-equiv="content-security-policy" content="frame-ancestors 'self';">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: content-box;
+      }
+      .first {
+        height: 99%;
+        background-image: url(netflix\ shows\ background.jpg);
+        object-fit: cover;
+      }
+      .netflix {
+        height: 150px;
+        width: 150px;
+        background-color: aqua;
+        margin-left: 18%;
+      }
+      .black {
+        background-color: black;
+        height: 99vh;
+        width: 100%;
+        opacity: 0.6;
+      }
+
+      .top {
+        height: 20vh;
+        width: 100%;
+        position: absolute;
+        margin: auto;
+      }
+      .top nav span {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        right: 11%;
+        top: 3vh;
+        z-index: 20;
+        gap: 10px;
+      }
+      select {
+        padding: 7px 18px 7px 18px;
+        background-color: rgb(21, 20, 20);
+        color: white;
+        font-family: "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        font-weight: 550;
+        border-radius: 4px;
+        appearance: none;
+        text-align: center;
+      }
+      nav img {
+        margin-left: 18%;
+        z-index: 10;
+      }
+      a {
+        padding: 10px;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        font-family: "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .text {
+        position: absolute;
+        top: 36%;
+        left: 34%;
+        color: white;
+        text-align: center;
+      }
+      .text h1 {
+        font-size: 60px;
+        text-align: center;
+        font-weight: 700;
+      }
+      .text span {
+        line-height: 54px;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .text input {
+        padding: 16px 180px 16px 0px;
+        background-color: black;
+        opacity: 0.65;
+        border-radius: 5px;
+        position: relative;
+        left: 0%;
+        font-size: 20px;
+        border: 1px solid white;
+        color: white;
+      }
+
+      .text button {
+        padding: 14px 40px;
+        color: white;
+        background-color: red;
+        border: none;
+        border-radius: 5px;
+        font-size: 25px;
+      }
+
+      .text input::placeholder {
+        caret-color: crimson;
+        padding-left: 10px;
+      }
+      .text button:hover {
+        background-color: rgb(146, 5, 5);
+      }
+      .twopart {
+        height: 105vh;
+        width: 100%;
+        background-image: url(nebula\ background.jpg);
+        background-size: cover;
+      }
+      .twopart section span {
+        height: 80px;
+        position: absolute;
+        left: 10%;
+        top: 107%;
+        color: white;
+        font-size: 40px;
+        font-family: "Trebuchet MS", sans-serif;
+        font-weight: 500;
+        background-color: rgb(208, 5, 5);
+        padding: 30px 30px 1px 30px;
+        opacity: 0.9;
+        border-radius: 10px;
+        border: 1px solid white;
+        text-align: center;
+      }
+      .twopart section span {
+        height: 80px;
+        position: absolute;
+        left: 10%;
+        top: 107%;
+        color: white;
+        font-size: 40px;
+        font-family: "Trebuchet MS", sans-serif;
+        font-weight: 500;
+        background-color: rgb(208, 5, 5);
+        padding: 30px 30px 1px 30px;
+        opacity: 0.9;
+        border-radius: 10px;
+        border: 1px solid transparent; /* Set initial border as transparent */
+        text-align: center;
+        animation: runningBorder 0.1s linear infinite; /* Apply animation */
+      }
+
+      @keyframes runningBorder {
+        0% {
+          border-color: red; /* Start with red */
+        }
+        25% {
+          border-color: rgb(6, 241, 241); /* Change to yellow */
+        }
+        50% {
+          border-color: blue; /* Change to blue */
+        }
+        75% {
+          border-color: green; /* Change to green */
+        }
+        100% {
+          border-color: rgb(225, 7, 138); /* Back to red */
+        }
+      }
+      .brand {
+        position: relative;
+        left: 0%;
+      }
+      .photos {
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 126%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .boxsme {
+        height: 321px;
+        width: 250px;
+        background-color: aqua;
+        border-radius: 10px;
+        background-size: cover;
+        transition: 0.1s ease;
+      }
+      .box1 {
+        background-image: url(pushpa2\ image.jpg);
+        box-shadow: 5px 13px 13px rgba(248, 2, 2, 0.6);
+
+      }
+      .box2 {
+        background-image: url(squidgamephoto.jpg);
+        box-shadow: 5px 13px 13px rgba(248, 2, 2, 0.6);
+      }
+      .box3 {
+        background-image: url(bhaskar.jpg);
+        box-shadow: 5px 13px 13px rgba(248, 2, 2, 0.6);
+      }
+      .box4 {
+        background-image: url(bholimagw.jpg);
+        box-shadow: 5px 13px 13px rgba(248, 2, 2, 0.6);
+      }
+      .box5 {
+        background-image: url(venom.jpg);
+        box-shadow: 5px 13px 13px rgba(248, 2, 2, 0.6);
+      }
+      .box6 {
+        background-image: url(mismatched.jpg);
+        box-shadow: 5px 13px 13px rgba(248, 2, 2, 0.6);
+      }
+      .box7 {
+        background-image: url(maraan.jpg);
+        box-shadow: 5px 13px 13px rgba(248, 2, 2, 0.6);
+      }
+      .boxsme:hover {
+        transform: scale(1.1);
+      }
+      .textboxes {
+        height: 26vh;
+        width: 100%;
+        position: absolute;
+        top: 168%;
+      }
+      .textboxes .boxsmh {
+        height: 25vh;
+        width: 400px;
+        /* background: linear-gradient(black, blue, red, gray); */
+        border: 3px solid white;
+        border-radius: 10px;
+        color: white;
+        -webkit-text-stroke: 0.1px;
+        -webkit-text-stroke-color: black;
+      }
+
+      .textboxes {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .boxsmh span {
+        line-height: 100px;
+        font-size: 23px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        padding: 12px;
+        font-weight: 500;
+      }
+      .boxsmh p {
+        font-size: 19px;
+        padding: 12px;
+        font-weight: 400;
+      }
+      .boxx1 img {
+        position: absolute;
+        top: 176px;
+        left: 386px;
+        border-radius: 10px;
+      }
+      .boxx2 img {
+        position: absolute;
+        left: 848px;
+        bottom: 7px;
+        /* margin-left: 327px;
+        margin-top: 7px; */
+        border-radius: 10px;
+      }
+      .boxx3 img {
+        border-radius: 10px;
+        position: absolute;
+        left: 1309px;
+        bottom: 7px;
+        /* margin-left: 326px;
+        margin-top: 7px; */
+      }
+      .boxx4 img {
+        border-radius: 10px;
+        /* margin-left: 326px; */
+        position: absolute;
+        top: 176px;
+        left: 1771px;
+      }
+
+      .ending {
+        background-color: black;
+        height: 1080px;
+        width: 100%;
+        padding-top: 70px;
+      }
+
+      footer span {
+        font-size: 25px;
+        margin-left: 180px;
+        color: white;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: 500;
+      }
+      footer ul li {
+        color: white;
+        margin-left: 180px;
+        list-style: none;
+        font-family: "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        background-color: rgb(52, 51, 51);
+        margin-bottom: 10px;
+        padding: 30px;
+        margin-top: 20px;
+        width: 75%;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        font-size: 23px;
+        font-weight: 550;
+      }
+
+      footer ul li:hover {
+        background-color: rgb(108, 106, 106);
+        transform: scale(1.01);
+      }
+
+      footer input {
+        padding: 16px 180px 16px 0px;
+        background-color: black;
+        opacity: 0.65;
+        border-radius: 5px;
+        border: 1px solid white;
+        font-size: 20px;
+        margin-left: 31%;
+        margin-top: 40px;
+        color: white;
+      }
+      footer button {
+        padding: 15px 45px;
+        color: white;
+        background-color: red;
+        border: none;
+        border-radius: 5px;
+        font-size: 25px;
+      }
+      footer ::placeholder {
+        padding-left: 10px;
+      }
+      footer button:hover {
+        background-color: rgb(146, 5, 5);
+      }
+      .end {
+        height: max-content;
+        margin-top: 98px;
+        margin-left: 190px;
+      }
+      .readyto {
+        font-size: 16px;
+        font-weight: 100;
+        margin-left: 32%;
+        position: absolute;
+        top: 286%;
+        letter-spacing: 1px;
+      }
+      #mother {
+        display: none;
+      }
+      @media (min-width: 370px) and (max-width: 800px) {
+        * {
+          margin: 0%;
+          padding: 0%;
+        }
+        #mother {
+          display: inline;
+          font-size: 8px;
+          position: absolute;
+          margin-top: 35px;
+          white-space: wrap;
+          font-weight: 600;
+          margin-left: 30px;
+        }
+        html body {
+          margin: 0%;
+          padding: 0%;
+          height: 100%;
+          width: 100%;
+          overflow-x: hidden;
+          min-height: 100vh;
+        }
+        .first img {
+          height: 70px;
+          margin-top: 25px;
+        }
+        .top nav span {
+          right: 12%;
+          top: 6vh;
+        }
+        select {
+          height: 18px;
+          width: 45px;
+          font-size: 13px;
+          text-align: center;
+          border: 0.8px solid white;
+        }
+        a {
+          padding: 10px;
+          font-size: 13px;
+          height: 15px;
+          font-weight: 600;
+        }
+        .text {
+          left: 0%;
+          font-size: 50px;
+          width: 97%;
+        }
+        .text h1 {
+          font-size: 35px;
+          position: relative;
+          left: 0%;
+        }
+        .text span {
+          font-size: 11px;
+          line-height: 0px;
+          font-weight: 300;
+          margin-left: 10px;
+          font-weight: 600;
+          position: relative;
+          left: 0%;
+        }
+
+        .text input {
+          padding: 10px;
+          margin-left: 10px;
+        }
+        .text input::placeholder {
+          font-size: 14px;
+        }
+        .text button {
+          padding: 11px 30px;
+          font-size: 16px;
+          font-weight: 500;
+          margin-left: 27px;
+        }
+        .twopart section span {
+          height: 45px;
+          font-size: 25px;
+          font-weight: 500;
+          padding: 15px 10px 1px 10px;
+          margin-left: 75px;
+          margin-top: 50px;
+        }
+        .twopart video {
+          display: none;
+        }
+        .twopart img {
+          display: none;
+        }
+        .photos {
+          top: 130%;
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          flex-wrap: wrap;
+          overflow: auto;
+        }
+        .box7 {
+          display: none;
+        }
+        .boxsme {
+          height: 190px;
+          width: 150px;
+        }
+        .ending {
+          height: 800px;
+          overflow: hidden;
+          min-height: 100vh;
+        }
+        .textboxes {
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+        .main-wrapper {
+          min-height: 100vh;
+          overflow: hidden;
+        }
+        .textboxes video {
+          display: none;
+        }
+        .textboxes img {
+          display: none;
+        }
+        /* .boxsmh{
+                  width: 370px;
+                  height: 1%; */
+
+        footer span {
+          margin-left: 29px;
+          font-size: 18px;
+          font-weight: 600;
+        }
+        footer ul li {
+          margin-left: 29px;
+          padding: 18px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .readyto {
+          display: none;
+        }
+        .contact {
+          position: absolute;
+          right: 50%;
+          top: 390%;
+          font-weight: 500;
+          font-size: 15px;
+          padding: 15px;
+          display: none;
+        }
+        .end a {
+          position: absolute;
+          left: 38%;
+          top: 345%;
+        }
+        .end img {
+          border-radius: 10px;
+        }
+        .social {
+          position: absolute;
+          left: 23%;
+          top: 341%;
+          font-size: 17px;
+          font-weight: 500;
+        }
+        footer input {
+          padding: 13px;
+          font-size: 13px;
+          margin-left: 25%;
+        }
+        footer button {
+          padding: 12px;
+          font-size: 16px;
+          margin-left: 36%;
+          margin-top: 10px;
+          font-weight: 500;
+        }
+        #she {
+          margin-left: 50px;
+        }
+        .gawk {
+          margin-top: 190px;
+          letter-spacing: 1px;
+          font-size: 8px;
+          font-weight: 400px;
+          margin-top: 237px;
+          margin-left: 10px;
+        }
+        .boxsmh {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <nav>
+        <!-- <img src="580b57fcd9996e24bc43c529.png" alt="Netflix Logo" width="400px"> -->
+        <span>
+          <select name="Language" id="one">
+            <option value="English">English</option>
+            <option value="Hindhi">Hindhi</option>
+            <option value="Chinglish">Chinglish</option>
+          </select>
+          <a href="https:www.instagram.com">Sign in</a>
+        </span>
+      </nav>
+    </div>
+
+    <div class="first">
+      <main>
+        <div class="black"></div>
+        <img
+          src="580b57fcd9996e24bc43c529.png"
+          height="120px"
+          alt=""
+          style="position: absolute; top: 1px; left: 9%"
+        />
+        <div class="text">
+          <h1>
+            Unlimited movies,<br />
+            TV shows and <br />
+            more
+          </h1>
+          <span>Starts at ₹149. Cancel at any time.</span>
+          <br />
+          <span
+            >Ready to watch? Enter your email to create or restart your
+            membership.</span
+          >
+          <br />
+          <input type="email" placeholder=" Email address" required />
+          <button>Get Started</button>
+        </div>
+        <div class="twopart">
+          <video
+            src="aaj ki raat.mp4"
+            muted
+            controls
+            autoplay
+            loop
+            width="100%"
+            height="245px"
+            style="object-fit: cover"
+          ></video>
+          <img
+            src="stree 2 icon.jpg"
+            height="150px"
+            alt="stree 2 icon"
+            style="
+              position: absolute;
+              left: 28%;
+              top: 105%;
+              border-radius: 15px;
+            "
+          />
+          <section>
+            <span>Trending Now</span>
+          </section>
+          <div class="photos">
+            <div class="box1 boxsme"></div>
+            <div class="box2 boxsme"></div>
+            <div class="box3 boxsme"></div>
+            <div class="box4 boxsme"></div>
+            <div class="box5 boxsme"></div>
+            <div class="box6 boxsme"></div>
+            <div class="box7 boxsme"></div>
+          </div>
+        </div>
+        <div class="textboxes">
+          <div class="boxsmh boxx1">
+            <video
+              style="border-radius: 10px"
+              src="streevideo.mp4"
+              muted
+              autoplay
+              loop
+              height="225px"
+            ></video>
+            <span
+              style="
+                font-size: 30px;
+                text-align: center;
+                margin-left: 135px;
+                font-style: italic;
+                background: linear-gradient(red, black, blue);
+                border-radius: 10px;
+                animation: runningBorder 0.1s linear infinite;
+                border: 1px solid;
+              "
+              >Stree 2</span
+            >
+            <img
+              src="https://i.pinimg.com/736x/99/c3/b1/99c3b151faf5fcd731b24deee349ca46.jpg"
+              height="55px"
+              alt="netflixicon"
+            />
+          </div>
+          <div class="boxsmh boxx2">
+            <video
+              style="border-radius: 10px"
+              src="pushpa2 teaser.mp4"
+              muted
+              autoplay
+              loop
+              height="225px"
+            ></video>
+            <span
+              style="
+                margin-left: 140px;
+                background: linear-gradient(blue, black, rgb(208, 0, 255));
+                font-size: 27px;
+                border-radius: 10px;
+                animation: runningBorder 0.1s linear infinite;
+                border: 1px solid;
+              "
+              >Pushpa 2</span
+            >
+
+            <img
+              src="https://i.pinimg.com/736x/99/c3/b1/99c3b151faf5fcd731b24deee349ca46.jpg"
+              height="55px"
+              alt="netflixicon"
+            />
+          </div>
+          <div class="boxsmh boxx3">
+            <video
+              style="border-radius: 10px"
+              src="squidgame2 teaser.mp4"
+              muted
+              autoplay
+              loop
+              height="225px"
+            ></video>
+            <span
+              style="
+                background: linear-gradient(hotpink, black, yellow);
+                margin-left: 124px;
+                border-radius: 10px;
+                font-size: 25px;
+                animation: runningBorder 0.1s linear infinite;
+                border: 1px solid;
+              "
+              >Squid game 2</span
+            >
+
+            <img
+              src="https://i.pinimg.com/736x/99/c3/b1/99c3b151faf5fcd731b24deee349ca46.jpg"
+              height="55px"
+              alt="netflixicon"
+            />
+          </div>
+          <div class="boxsmh boxx4">
+            <video
+              style="border-radius: 10px"
+              src="bgool.mp4"
+              muted
+              autoplay
+              loop
+              height="225px"
+            ></video>
+            <span
+              style="
+                background: linear-gradient(black, rgb(12, 80, 84), darkblue);
+                border-radius: 10px;
+                padding: 14px;
+                margin-left: 100px;
+                animation: runningBorder 0.1s linear infinite;
+                border: 1px solid;
+              "
+              >Bhool Bhulaiyaa 2</span
+            >
+
+            <img
+              src="https://i.pinimg.com/736x/99/c3/b1/99c3b151faf5fcd731b24deee349ca46.jpg"
+              height="55px"
+              alt="netflixicon"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="ending">
+      <footer>
+        <span>Frequently Asked Questions</span>
+        <ul>
+          <li>What is Netflix?</li>
+          <li>How much does Netflix cost?</li>
+          <li>Where can I watch?</li>
+          <li>How do i Cancel?</li>
+          <li>What can i watch on Netflix?</li>
+          <li>Is Netflix good for kids?</li>
+        </ul>
+        <span class="readyto"
+          >Ready to watch? Enter your email to create or restart your
+          membership.</span
+        >
+        <span id="mother"
+          >Ready to watch? Enter your email to create or restart your
+          membership.</span
+        >
+        <br />
+        <input type="email" placeholder="Enter your email" />
+        <button>Get Started</button>
+        <div class="end">
+          <span class="contact" style="margin-left: 310px">
+            Questions? Call +917006061016</span
+          >
+          <span class="social" style="font-size: 20px"> Contact me on -</span>
+          <a
+            style="padding: 0%; background-color: black"
+            href="https://www.instagram.com/stfu.kashii/"
+            ><img
+              src="instagram-icon-colorful-by-Vexels.png"
+              height="60px"
+              alt=" instagram icon"
+          /></a>
+          <a
+            id="she"
+            style="padding: 0; background-color: black"
+            href="https://www.facebook.com/bhat.kashif.9883"
+          >
+            <img
+              style="padding: 8px"
+              src="facebook-icon-hq8.png"
+              height="40px"
+              alt="facebook icon"
+          /></a>
+        </div>
+        <span class="gawk" style="position: absolute; top: 321%"
+          >THIS IS AN FAN MADE CLONE OF NETFLIX DEVELOPED WITH ONLY HTML & CSS
+          BY KASHIF IRFAN BHAT &copy; 2025
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>
+<!-- <span class="gawk" style=" font-weight: 200; font-size: 15px; position: absolute; top: 321%; letter-spacing: 2px; margin-left: 400px; ">THIS IS AN FAN MADE CLONE OF NETFLIX DEVELOPED WITH ONLY HTML & CSS BY KASHIF IRFAN BHAT &copy;
+  2025          </span> -->
